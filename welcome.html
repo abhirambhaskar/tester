@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Magic</title>
+  <style>
+    /* Center the button */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /* Style the button */
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Hover effect */
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hello Welcome</h2>
+  <button onclick="startEmojiMagic()" id="se">See the Magic</button>
+  <button style="background-color: red; display:none;" id="red">Haaaa.....</button>
+  <div id="here"></div>
+
+  <script>
+  
+    function startEmojiMagic() {
+    const div = document.getElementById("here");
+  	const emoji = document.createElement("span");
+    document.getElementById("se").style.display="none";
+    	 emoji.innerHTML = "😊";
+        
+        // set random position and size for the emoji
+        emoji.style.position = "absolute";
+        emoji.style.left = Math.floor(Math.random() * div.clientWidth) + "px";
+        emoji.style.top = Math.floor(Math.random() * div.clientHeight) + "px";
+        emoji.style.fontSize = Math.floor(Math.random() * 200) + "px";
+        
+        // add the emoji element to the div
+        div.appendChild(emoji);
+     setTimeout(() => {
+  document.getElementById("red").style.display = "";
+}, 2000);
+      setTimeout(addEmojis, 5000); // wait 1 second before starting the loop
+    }
+
+    function addEmojis() {
+    
+    const startTime = new Date().getTime(); // get current time in milliseconds
+const duration = 60 * 1000; // 1 minute in milliseconds
+
+while (new Date().getTime() - startTime < duration) {
+  // code to be executed repeatedly
+  
+  console.log("happy!!!");
+}
+    
+    }
+  </script>
+
+</body>
+</html>
